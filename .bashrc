@@ -12,9 +12,9 @@ alias ls='ls --color=auto'
 
 # color the username and path
 #PS1='\033[00;33m\][\u@\h \W]\[\033[0m\] \$ '
-#NOTE: you need to escape all non-printing chars with '\[' and '\[' or urxvt won't wrap lines properly
+#NOTE: you need to escape all non-printing chars with '\[' and '\]' or urxvt won't wrap lines properly
 #see https://www.linuxquestions.org/questions/slackware-14/cli-lines-wrapping-overwrites-in-rxvt-4175467924/
-PS1='\[\e[0;33m\]\u@\h \W \$ \[\e[m\]'
+PS1='\[\e[0;34m\]\u@\h\[\e[0;32m\]\W\[\e[0;33m\]\$\[\e[m\]'
 # uncolor the username and path
 #PS1='[\u@\h \W] \$ '
 
