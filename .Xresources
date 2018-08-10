@@ -2,7 +2,7 @@
 
 ! configure urxvt
 ! note: must run xrdb ~/.Xresources after making changes to this file
-URxvt.font: xft:Inconsolata:size=11
+URxvt.font: xft:Inconsolata:size=10
 URxvt.thickness: 10
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: True
