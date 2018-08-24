@@ -26,11 +26,11 @@ export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
 # https://community.spotify.com/t5/Desktop-Linux/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272
 alias spotify="/usr/bin/spotify --force-device-scale-factor=3"
 
-# scale rawtherapee
-#alias rawtherapee="export GDK_SCALE=3 && /usr/bin/rawtherapee"
-
 # scale GTK/GDK apps for HiDPI
 export GDK_SCALE=3
+
+# alias to go to ~/Files partition
+alias cdf="cd ~/Files"
 
 # open atom in the current directory when "atom" is called
 alias atom="/usr/bin/atom ./"
@@ -44,15 +44,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # set i3lock background
 alias i3lock='i3lock -c 000000'
-
-# enable powerline
-# https://wiki.archlinux.org/index.php/Powerline
-# - first add directory to PATH
-#PATH=$PATH:/home/ryan/.local/bin/
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-#. /home/ryan/.local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 
 # Arduino path variables
 export ARDUINO_PLATFORM_LIB_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/libraries
