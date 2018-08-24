@@ -42,6 +42,9 @@ alias ranger="source ranger"
 # courtesy of https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
+# set i3lock background
+alias i3lock='i3lock -c 000000'
+
 # enable powerline
 # https://wiki.archlinux.org/index.php/Powerline
 # - first add directory to PATH
