@@ -274,7 +274,7 @@ for_window [class="Pavucontrol"] resize set 1500 1000
 for_window [class="Pavucontrol"] move scratchpad
 exec --no-startup-id export GDK_SCALE=3 && pavucontrol #scale for HiDPI
 
-# Run uxrvt on startup
-for_window [title="welcome"] floating enable
-for_window [title="welcome"] resize set 2000 1200
-exec --no-startup-id xrdb ~/.Xresources && urxvt --hold -title welcome -e sh -c "printf '\n' && neofetch"
+# urxvt/neofetch welcome screen
+#for_window [title="welcome"] floating enable
+#for_window [title="welcome"] resize set 2000 1200
+#exec --no-startup-id xrdb ~/.Xresources && urxvt --hold -title welcome -e sh -c "printf '\n' && neofetch"
