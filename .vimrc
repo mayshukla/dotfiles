@@ -15,10 +15,9 @@ set number
 " }}}
 " Tabs "{{{
 
-"Display existing tabs as 4 spaces
-set tabstop=4
-"When press the tab key, insert 4 spaces
 set expandtab
+set shiftwidth=2
+set softtabstop=4
 
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
