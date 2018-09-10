@@ -19,6 +19,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=4
 
+"Use 2 spaces for HTML
+autocmd BufNewFile,BufRead *.html set softtabstop=2
+
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
 autocmd BufNewFile,BufREad \cmakefile set noexpandtab
