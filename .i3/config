@@ -242,6 +242,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3 # decrease 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
+# Run script to configure touchpad (sensitivity, natural scrolling) on startup
+exec touchpad-config
+
 # Media player controls
 # I don't know if these work
 bindsym XF86AudioPlay exec playerctl play
