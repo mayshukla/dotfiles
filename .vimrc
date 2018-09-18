@@ -28,6 +28,13 @@ autocmd BufNewFile,BufRead *.css set softtabstop=2
 autocmd BufNewFile,BufREad \cmakefile set noexpandtab
 
 " }}}
+" Whitespace "{{{
+
+"Remove all trailing whitespace by pressing F5
+"https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" }}}
 " Folding "{{{
 
 "Automatically folds where there's three consecutive curly braces
