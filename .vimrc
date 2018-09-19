@@ -4,7 +4,7 @@
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " }}}
 " Line numbers " {{{
