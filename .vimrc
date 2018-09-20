@@ -53,4 +53,8 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'error': 80,
     \ }
 
+" set theme to match gruvbox colorscheme
+" gruvbox airline theme located at /usr/share/vim/vimfiles/autoload/airline/themes/gruvbox.vim
+let g:airline_theme='gruvbox'
+
 " }}}
