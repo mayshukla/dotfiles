@@ -18,6 +18,20 @@ PS1='\[\e[0;35m\]\u\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[1;33m\]\W\[\e[0;32m\]\$\[\e[m
 # uncolor the username and path
 #PS1='[\u@\h \W] \$ '
 
+# Use prompt command to display exit status if it is not zero
+# Idea from: https://stackoverflow.com/questions/16715103/bash-prompt-with-last-exit-code
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local EXIT="$?" # must be first
+
+    PS1='\[\e[0;35m\]\u\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[1;33m\]\W\[\e[0;32m\]\$\[\e[m\] '
+
+    if [ $EXIT != 0 ]; then
+        PS1+="\[\e[1;31m\][${EXIT}]\[\e[m\] "
+    fi
+}
+
 # PATH variable
 export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
 
