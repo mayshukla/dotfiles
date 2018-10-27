@@ -9,8 +9,8 @@ colorscheme gruvbox
 " }}}
 " Line numbers " {{{
 
-"Enable line numbers by default
-set number
+"Show absolute number of current line and relative numbers for other lines
+set number relativenumber
 
 " }}}
 " Tabs "{{{
