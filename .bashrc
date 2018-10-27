@@ -8,6 +8,9 @@
 # vi/vim mode
 set -o vi
 
+# implicit cd
+#shopt -s autocd
+
 alias ls='ls --color=auto'
 
 # color the username and path
@@ -31,6 +34,12 @@ __prompt_command() {
         PS1+="\[\e[1;31m\][${EXIT}]\[\e[m\] "
     fi
 }
+
+# Allow termite to open a new terminal in current directory using ctrl-shift-t
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
 
 # PATH variable
 export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
@@ -70,8 +79,9 @@ export BOOTLOADER_PARENT=/usr/share/arduino/hardware/archlinux-arduino/avr/bootl
 source ~/aurdownloads/nvm/init-nvm.sh
 
 # android
-export ANDROID_HOME=$HOME/Files/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
+export ANDROID_SDK_ROOT=$HOME/Files/Android/Sdk
+export ANDROID_EMULATOR_HOME=$HOME/Files/Android/.android
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
