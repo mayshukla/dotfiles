@@ -49,6 +49,9 @@ exec xrdb ~/.Xresources
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec termite
 
+# start emacs
+bindsym $mod+Ctrl+Return exec emacs --no-x-resources
+
 # start web browswer
 bindsym $mod+b exec $browser
 
