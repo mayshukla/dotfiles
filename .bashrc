@@ -44,6 +44,10 @@ fi
 # PATH variable
 export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
 
+# Open emacs in terminal, in client mode
+# (server must be running)
+alias emacs="emacsclient -c"
+
 # scale spotify for HiDPI when launched from terminal
 # courtesy of:
 # https://community.spotify.com/t5/Desktop-Linux/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272
@@ -80,6 +84,7 @@ source ~/aurdownloads/nvm/init-nvm.sh
 
 # android
 export ANDROID_SDK_ROOT=$HOME/Files/Android/Sdk
+export ANDROID_HOME=$HOME/Files/Android/Sdk # YOU NEED THIS ONE FOR REACT-NATIVE RUN-ANDROID
 export ANDROID_EMULATOR_HOME=$HOME/Files/Android/.android
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
