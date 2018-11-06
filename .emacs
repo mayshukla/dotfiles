@@ -16,6 +16,8 @@
 
 ;; autocomplete
 (require 'auto-complete)
+(ac-config-default)
+(add-hook 'prog-mode-hook 'auto-complete-mode)
 
 ;; jedi for python autocomplete
 (add-hook 'python-mode-hook 'jedi:setup)
