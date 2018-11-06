@@ -22,6 +22,7 @@ set softtabstop=4
 "Use 2 spaces for HTML and CSS
 autocmd BufNewFile,BufRead *.html set softtabstop=2
 autocmd BufNewFile,BufRead *.css set softtabstop=2
+autocmd BufNewFile,BufRead *.js set softtabstop=2
 
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
