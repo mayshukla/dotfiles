@@ -8,6 +8,12 @@
 (require 'evil)
 (evil-mode t)
 
+(require 'org)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-switchb)
+
 ;; enable relative numbers by default for evil-mode and prog-mode
 (require 'nlinum)
 (require 'nlinum-relative)
@@ -22,6 +28,10 @@
 ;; jedi for python autocomplete
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+;; py-yapf for python pep8 formatting
+;; note: need to install yapf on system first using pip or package manager
+(require 'py-yapf)
+(add-hook 'python-mode-hook 'py-yapf-enable-on-save)
 
 ;; flycheck syntax checker
 (require 'flycheck)
@@ -50,10 +60,12 @@
  '(custom-safe-themes
    (quote
     ("7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" default)))
+ '(fill-column 79)
  '(js-indent-level 2)
+ '(org-agenda-files (quote ("~/Files/org")))
  '(package-selected-packages
    (quote
-    (js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
+    (py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
