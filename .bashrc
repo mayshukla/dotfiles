@@ -57,7 +57,7 @@ alias emacs="emacsclient -c"
 # scale spotify for HiDPI when launched from terminal
 # courtesy of:
 # https://community.spotify.com/t5/Desktop-Linux/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272
-alias spotify="/usr/bin/spotify --force-device-scale-factor=3"
+alias spotify="spotify --force-device-scale-factor=3 & disown"
 
 # scale GTK/GDK apps for HiDPI
 export GDK_SCALE=3
