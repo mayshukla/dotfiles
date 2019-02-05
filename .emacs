@@ -49,8 +49,17 @@
 
 ;; prettier for javascript, react, jsx, etc.
 (require 'prettier-js)
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook 'prettier-js-mode)
+;;(add-hook 'js2-mode-hook 'prettier-js-mode)
+;;(add-hook 'web-mode-hook 'prettier-js-mode)
+
+;; markdown
+(require 'markdown-mode)
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -59,13 +68,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" default)))
+    ("e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" default)))
  '(fill-column 79)
  '(js-indent-level 2)
  '(org-agenda-files (quote ("~/Files/org")))
  '(package-selected-packages
    (quote
-    (py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
+    (use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -73,7 +82,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'gruvbox)
+(load-theme 'gruvbox-dark-hard)
 
 (add-to-list 'default-frame-alist
     '(font . "Inconsolata-10"))

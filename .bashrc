@@ -65,6 +65,11 @@ export GDK_SCALE=3
 # alias to go to ~/Files partition
 alias cdf="cd ~/Files"
 
+alias cdd="cd ~/Downloads"
+alias cds="cd ~/Files/school"
+alias cdc="cd ~/Files/code"
+alias cdr="cd ~/Files/resumes"
+
 # open atom in the current directory when "atom" is called
 alias atom="/usr/bin/atom ./"
 
@@ -97,5 +102,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
+# RubyGems
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+export GEM_HOME=$HOME/.gem
+
 # boolang
 source ~/Files/code/boolang/setup.bash
+# napkin
+export PATH=$PATH:~/Files/code/napkin/bin
