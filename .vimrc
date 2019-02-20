@@ -4,13 +4,13 @@
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " }}}
 " Line numbers " {{{
 
-"Enable line numbers by default
-set number
+"Show absolute number of current line and relative numbers for other lines
+set number relativenumber
 
 " }}}
 " Tabs "{{{
@@ -22,6 +22,7 @@ set softtabstop=4
 "Use 2 spaces for HTML and CSS
 autocmd BufNewFile,BufRead *.html set softtabstop=2
 autocmd BufNewFile,BufRead *.css set softtabstop=2
+autocmd BufNewFile,BufRead *.js set softtabstop=2
 
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
@@ -52,5 +53,9 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'warning': 80,
     \ 'error': 80,
     \ }
+
+" set theme to match gruvbox colorscheme
+" gruvbox airline theme located at /usr/share/vim/vimfiles/autoload/airline/themes/gruvbox.vim
+let g:airline_theme='gruvbox'
 
 " }}}
