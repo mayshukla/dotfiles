@@ -233,8 +233,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 default_border pixel 2
 
 # border for focused windows
-client.focused #ff0000 #ff0000 #ff0000 #ff0000 #ff0000
-client.unfocused #000000 #000000 #000000 #000000 #000000
+# note: the second last color sets the color of the right border when there is
+# only one window on a screen
+client.focused #8ec07c #8ec07c #000000 #8ec07c #8ec07c
+client.unfocused #000000 #000000 #ffffff #000000 #000000
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
