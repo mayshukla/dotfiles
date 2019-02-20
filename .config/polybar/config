@@ -17,15 +17,19 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #bb222222
+background = #1d2021
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #ebdbb2
+foreground-alt = #928374
+primary = #d79921
+secondary = #fb4934
+alert = #cc241d
+; from gruvbox
+yellow = #fabd2f
+purple = #b16286
+aqua = #8ec07c
+red = #cc241d
+blue = #83a598
 
 [bar/ryan]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -164,7 +168,7 @@ interval = 25
 mount-0 = /
 mount-1 = /home/ryan/Files
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#8ec07c}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -253,7 +257,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.yellow}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -268,7 +272,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.yellow}
 label = %percentage:2%%
 
 [module/memory]
@@ -276,7 +280,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+;format-underline = #4bffdc
+format-underline = ${colors.blue}
 label = %percentage_used%%
 
 [module/wlan]
@@ -285,7 +290,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.purple}
 label-connected = %essid%
 
 format-disconnected =
@@ -329,7 +334,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.blue}
 
 label = %date% %time%
 
@@ -344,11 +349,11 @@ label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = ${colors.purple}
+bar-volume-foreground-1 = ${colors.purple}
+bar-volume-foreground-2 = ${colors.purple}
+bar-volume-foreground-3 = ${colors.purple}
+bar-volume-foreground-4 = ${colors.purple}
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
@@ -395,10 +400,10 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.aqua}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.red}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
