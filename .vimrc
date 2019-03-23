@@ -24,6 +24,10 @@ autocmd BufNewFile,BufRead *.html set softtabstop=2
 autocmd BufNewFile,BufRead *.css set softtabstop=2
 autocmd BufNewFile,BufRead *.js set softtabstop=2
 
+"Use 2 spaces for C++
+autocmd BufNewFile,BufRead *.cpp set softtabstop=2
+autocmd BufNewFile,BufRead *.cc set softtabstop=2
+
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
 autocmd BufNewFile,BufREad \cmakefile set noexpandtab
