@@ -57,7 +57,8 @@ scrollback_lines = 10000
 # medium contrash: background = #282828
 # soft contrast: background = #32302f
 # trasparent background:
-background = rgba(29, 32, 33, 0.85)
+#background = rgba(29, 32, 33, 0.85)
+background = #1d2021
 foreground = #ebdbb2
 foreground_bold = #ebdbb2
 
