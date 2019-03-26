@@ -22,9 +22,13 @@
 (add-hook 'tex-mode-hook 'nlinum-relative-mode)
 
 ;; autocomplete
-(require 'auto-complete)
-(ac-config-default)
-(add-hook 'prog-mode-hook 'auto-complete-mode)
+;(require 'auto-complete)
+;(ac-config-default)
+;(add-hook 'prog-mode-hook 'auto-complete-mode)
+
+;; company-mode for autocomplete
+(require 'company)
+(add-hook 'prog-mode-hook 'company-mode)
 
 ;; jedi for python autocomplete
 (add-hook 'python-mode-hook 'jedi:setup)
@@ -35,9 +39,17 @@
 
 ;; irony mode for c++ stuff
 (require 'irony)
+(require 'company-irony)
+(require 'flycheck-irony)
 (add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c++-mode-hook 'company-irony)
+(add-hook 'c++-mode-hook 'flycheck-irony)
 (add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'company-irony)
+(add-hook 'c-mode-hook 'flycheck-irony)
 (add-hook 'objc-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'company-irony)
+(add-hook 'objc-mode-hook 'flycheck-irony)
 
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
@@ -82,7 +94,7 @@
  '(org-agenda-files (quote ("~/Files/org")))
  '(package-selected-packages
    (quote
-    (irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
+    (flycheck-irony company-irony irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi gruvbox-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
