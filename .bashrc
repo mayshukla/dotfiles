@@ -57,6 +57,12 @@ export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
 # Follow this example: https://www.gnu.org/software/emacs/manual/html_node/efaq/Colors-on-a-TTY.html#Colors-on-a-TTY
 alias em="TERM=xterm-24bit emacsclient -t"
 
+# Use "emo <filename>" to tell emacs server to visit a file
+emo () {
+  emacsclient -e "(find-file \"$1\")"
+}
+export -f emo
+
 # scale spotify for HiDPI when launched from terminal
 # courtesy of:
 # https://community.spotify.com/t5/Desktop-Linux/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272
