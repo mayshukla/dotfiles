@@ -5,6 +5,8 @@
 syntax enable
 set background=dark
 colorscheme gruvbox
+" Output true color rather than 256
+set termguicolors
 
 " }}}
 " Line numbers " {{{
