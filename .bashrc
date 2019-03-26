@@ -52,7 +52,10 @@ export PATH=$PATH:~/scripts:~/arduino-ua/bin:~/.local/bin
 
 # Open emacs in terminal, in client mode
 # (server must be running)
-alias emacs="emacsclient -c"
+#
+# TERM is set so that emacs outputs true color in the terminal
+# Follow this example: https://www.gnu.org/software/emacs/manual/html_node/efaq/Colors-on-a-TTY.html#Colors-on-a-TTY
+alias em="TERM=xterm-24bit emacsclient -t"
 
 # scale spotify for HiDPI when launched from terminal
 # courtesy of:
@@ -69,6 +72,9 @@ alias cdd="cd ~/Downloads"
 alias cds="cd ~/Files/school"
 alias cdc="cd ~/Files/code"
 alias cdr="cd ~/Files/resumes"
+
+# alias to quickly attach to tmux session
+alias tma="tmux attach -t"
 
 # open atom in the current directory when "atom" is called
 alias atom="/usr/bin/atom ./"
@@ -110,3 +116,4 @@ export GEM_HOME=$HOME/.gem
 source ~/Files/code/boolang/setup.bash
 # napkin
 export PATH=$PATH:~/Files/code/napkin/bin
+alias napkin="rlwrap napkin"
