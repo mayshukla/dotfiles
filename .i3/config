@@ -142,6 +142,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 
+# next/previous workspace
+bindsym $mod+Ctrl+$right workspace next
+bindsym $mod+Ctrl+$left workspace prev
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
