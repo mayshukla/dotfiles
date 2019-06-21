@@ -123,3 +123,21 @@ source ~/Files/code/boolang/setup.bash
 # napkin
 export PATH=$PATH:~/Files/code/napkin/bin
 alias napkin="rlwrap napkin"
+# pitcher
+export PATH=$PATH:~/Files/school/cmput275/pitcher
+
+# open jdk for IBM conference
+#export PATH=$PATH:~/jdk8u212-b03/bin
+#export JAVA_HOME=~/jdk8u212-b03
+export JAVA_HOME=/usr
+
+# apache maven for IBM conference
+#export PATH=$PATH:~/apache-maven-3.6.1/bin
+
+# TypeChef
+alias typechef="java -jar ~/Files/variability-research/typechef/TypeChef-0.3.7.jar"
+# VarClang
+alias varclang=~/Files/variability-research/build/bin/clang
+alias varclang++=~/Files/variability-research/build/bin/clang++
+# tool to automatically generate config file for VarClang
+alias varclang-config="python ~/Files/variability-research/researchwiki-reckhard/ifdef_extracter.py"
