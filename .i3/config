@@ -127,6 +127,7 @@ bindsym $mod+minus scratchpad show; [class="Pavucontrol"] move position center
 # Show only pavucontrol window in scratchpad
 # Also move it to center. (or else it will be in top left off screen)
 bindsym $mod+p [class="Pavucontrol"] scratchpad show; [class="Pavucontrol"] move position center
+bindsym $mod+m [class="Spotify"] scratchpad show; [class="Spotify"] resize set 3500 2000; [class="Spotify"] move position center
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
