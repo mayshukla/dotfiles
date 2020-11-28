@@ -67,16 +67,12 @@
 (use-package company-irony
   :ensure t
   :config
-  (add-hook 'c++-mode-hook 'company-irony)
-  (add-hook 'c-mode-hook 'company-irony)
-  (add-hook 'objc-mode-hook 'company-irony))
+  (add-to-list 'company-backends 'company-irony))
 
 (use-package flycheck-irony
   :ensure t
   :config
-  (add-hook 'c++-mode-hook 'flycheck-irony)
-  (add-hook 'c-mode-hook 'flycheck-irony)
-  (add-hook 'objc-mode-hook 'flycheck-irony))
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 ;; flycheck syntax checker
 (use-package flycheck
@@ -96,7 +92,9 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   ;; Better imenu
-  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode))
+  (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)
+  ;; indent 2 spaces
+  (setq js2-basic-offset 2))
 
 ;; prettier for javascript, react, jsx, etc.
 (use-package prettier-js
@@ -132,20 +130,37 @@
   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
   (add-hook 'scheme-mode-hook           #'enable-paredit-mode))
 
+;; java stuff
+(use-package lsp-java
+  :ensure t
+  :config
+  (add-hook 'java-mode-hook #'lsp))
+(use-package company-lsp
+  :ensure t)
+; set indent to 4 spaces for java
+(add-hook 'java-mode-hook (lambda ()
+			    (setq c-basic-offset 4)))
+
+;; ocaml stuff
+(use-package tuareg
+  :ensure t)
+(use-package merlin
+  :ensure t
+  :config
+  (autoload 'merlin-mode "merlin" "Merlin mode" t))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fd3c7bd752f48dcb7efa5f852ef858c425b1c397b73851ff8816c0580eab92f1" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "595617a3c537447aa7e76ce05c8d43146a995296ea083211225e7efc069c598f" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" default)))
+   '("4cf9ed30ea575fb0ca3cff6ef34b1b87192965245776afa9e9e20c17d115f3fb" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739" "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a" "2b9dc43b786e36f68a9fd4b36dd050509a0e32fe3b0a803310661edb7402b8b6" "b583823b9ee1573074e7cbfd63623fe844030d911e9279a7c8a5d16de7df0ed0" "8e797edd9fa9afec181efbfeeebf96aeafbd11b69c4c85fa229bb5b9f7f7e66c" "a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fd3c7bd752f48dcb7efa5f852ef858c425b1c397b73851ff8816c0580eab92f1" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "595617a3c537447aa7e76ce05c8d43146a995296ea083211225e7efc069c598f" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" default))
  '(fill-column 79)
  '(js-indent-level 2)
- '(org-agenda-files (quote ("~/Files/org")))
+ '(org-agenda-files '("~/Files/org"))
  '(package-selected-packages
-   (quote
-    (paredit slime flycheck-irony company-irony irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi))))
+   '(gruvbox-theme scala-mode merlin lsp-java paredit slime flycheck-irony company-irony irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
