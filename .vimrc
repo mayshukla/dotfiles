@@ -29,6 +29,10 @@ autocmd BufNewFile,BufRead *.js set softtabstop=2
 "Use 2 spaces for C++
 autocmd BufNewFile,BufRead *.cpp set softtabstop=2
 autocmd BufNewFile,BufRead *.cc set softtabstop=2
+autocmd BufNewFile,BufRead *.h set softtabstop=2
+
+"Use 2 spaces for md
+autocmd BufNewFile,BufRead *.md set softtabstop=2
 
 "Use real tabs for makefiles
 "matches anything called 'makefile', case insensitive
