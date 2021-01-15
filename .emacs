@@ -80,6 +80,11 @@
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
+(use-package clang-format
+  :ensure t
+  :config
+  (global-set-key [C-M-tab] 'clang-format-region))
+
 ;; google c/c++ style guide
 (use-package google-c-style
   :ensure t
