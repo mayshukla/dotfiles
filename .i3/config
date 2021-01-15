@@ -283,15 +283,15 @@ exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpaper/DSC_0166-1.jpg
 
 # Composite manager
-# requires compton
-exec --no-startup-id compton --config ~/.config/compton.conf
+# requires picom (previously i was using compton)
+exec --no-startup-id picom --config ~/.config/compton.conf
 
 # Run pavucontrol on i3 startup and put in scratchpad
 # requires pavucontrol
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Pavucontrol"] resize set 1500 1000
 for_window [class="Pavucontrol"] move scratchpad
-exec --no-startup-id export GDK_SCALE=3 && pavucontrol #scale for HiDPI
+exec --no-startup-id pavucontrol #scale for HiDPI
 
 # urxvt/neofetch welcome screen
 #for_window [title="welcome"] floating enable

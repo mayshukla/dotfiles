@@ -68,8 +68,12 @@ export -f emo
 # https://community.spotify.com/t5/Desktop-Linux/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272
 alias spotify="spotify --force-device-scale-factor=3 & disown"
 
+# So that git commit uses vim
+export EDITOR=vim
+
 # scale GTK/GDK apps for HiDPI
-export GDK_SCALE=3
+# this is set in ~/.Xresources now
+#export GDK_SCALE=3
 
 # alias to go to ~/Files partition
 alias cdf="cd ~/Files"
@@ -135,9 +139,14 @@ export JAVA_HOME=/usr
 #export PATH=$PATH:~/apache-maven-3.6.1/bin
 
 # TypeChef
-alias typechef="java -jar ~/Files/variability-research/typechef/TypeChef-0.3.7.jar"
+alias typechef="java -jar ~/Files/variability-research/typechef-jar/TypeChef-0.3.7.jar"
 # VarClang
 alias varclang=~/Files/variability-research/build/bin/clang
 alias varclang++=~/Files/variability-research/build/bin/clang++
 # tool to automatically generate config file for VarClang
 alias varclang-config="python ~/Files/variability-research/researchwiki-reckhard/ifdef_extracter.py"
+
+# added by travis gem
+[ -f /home/ryan/.travis/travis.sh ] && source /home/ryan/.travis/travis.sh
+
+export PATH=$PATH:~/aurdownloads/Write
