@@ -270,7 +270,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Gaps
 gaps inner 10
-gaps outer 0 #don't need this
+#gaps outer 0 #don't need this
 
 bindsym $mod+shift+g gaps inner all set 0
 bindsym $mod+g gaps inner all set 10
@@ -297,3 +297,6 @@ exec --no-startup-id pavucontrol #scale for HiDPI
 #for_window [title="welcome"] floating enable
 #for_window [title="welcome"] resize set 2000 1200
 #exec --no-startup-id xrdb ~/.Xresources && urxvt --hold -title welcome -e sh -c "printf '\n' && neofetch"
+
+# notification daemon
+exec --no-startup-id /usr/bin/dunst

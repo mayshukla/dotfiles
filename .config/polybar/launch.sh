@@ -9,7 +9,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch a bar on each monitor found
 # https://github.com/polybar/polybar/issues/763
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m polybar --reload ryan &
+    MONITOR=$m polybar --reload may &
 done
 
 echo "Bars launched..."

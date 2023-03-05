@@ -31,7 +31,7 @@ aqua = #8ec07c
 red = #cc241d
 blue = #83a598
 
-[bar/ryan]
+[bar/may]
 ; read MONITOR from environment variable
 monitor = ${env:MONITOR}
 width = 100%
@@ -167,7 +167,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home/ryan/Files
+mount-1 = /home/may/Files
 
 label-mounted = %{F#8ec07c}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted

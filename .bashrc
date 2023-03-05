@@ -145,8 +145,12 @@ alias varclang=~/Files/variability-research/build/bin/clang
 alias varclang++=~/Files/variability-research/build/bin/clang++
 # tool to automatically generate config file for VarClang
 alias varclang-config="python ~/Files/variability-research/researchwiki-reckhard/ifdef_extracter.py"
+alias sbcl="rlwrap sbcl"
 
 # added by travis gem
-[ -f /home/ryan/.travis/travis.sh ] && source /home/ryan/.travis/travis.sh
+[ -f /home/may/.travis/travis.sh ] && source /home/may/.travis/travis.sh
 
 export PATH=$PATH:~/aurdownloads/Write
+
+# this is supposed to improve performance during long calls
+alias discord="discord --no-sandbox & disown"

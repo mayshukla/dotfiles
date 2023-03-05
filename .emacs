@@ -44,11 +44,11 @@
   (add-hook 'prog-mode-hook 'company-mode))
 
 ;; jedi for python autocomplete
-(use-package jedi
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t))
+;(use-package jedi
+;  :ensure t
+;  :config
+;  (add-hook 'python-mode-hook 'jedi:setup)
+;  (setq jedi:complete-on-dot t))
 
 ;; py-yapf for python pep8 formatting
 ;; note: need to install yapf on system first using pip or package manager
@@ -106,6 +106,13 @@
   :ensure t)
 ;;(add-hook 'js2-mode-hook 'prettier-js-mode)
 ;;(add-hook 'web-mode-hook 'prettier-js-mode)
+
+(use-package typescript-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+  ;; indent 2 spaces
+  (setq typescript-indent-level 2))
 
 ;; markdown
 (use-package markdown-mode
@@ -165,7 +172,7 @@
  '(js-indent-level 2)
  '(org-agenda-files '("~/Files/org"))
  '(package-selected-packages
-   '(gruvbox-theme scala-mode merlin lsp-java paredit slime flycheck-irony company-irony irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi)))
+   '(typescript-mode gruvbox-theme scala-mode merlin lsp-java paredit slime flycheck-irony company-irony irony use-package markdown-mode+ py-yapf writeroom-mode js2-mode web-mode web-modeb prettier-js prettier-jsier arduino-mode clang-format google-c-style flycheck jedi)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
